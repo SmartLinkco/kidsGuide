@@ -185,9 +185,7 @@ function resetQuiz() {
 }
 
 function playSound(correct) {
-    const audio = new Audio(correct ? 
-        'https://www.soundjay.com/buttons/sounds/button-09.mp3' : 
-        'https://www.soundjay.com/buttons/sounds/button-10.mp3');
+    const audio = new Audio(correct ? 'ding.mp3' : 'buzz.mp3');
     audio.play();
 }
 
