@@ -3,6 +3,9 @@ body {
     background-color: #E8F5E9;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
 }
 .quiz-container {
     max-width: 800px;
@@ -11,6 +14,8 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 45%;
 }
 h1 {
     color: #2E7D32;
@@ -71,4 +76,57 @@ button:hover {
     pointer-events: none;
     z-index: -1;
     transition: all 8s ease-in-out;
+    width: 100%;
+}
+.video-container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    max-width: 45%;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.video-container h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px;
+    flex: 1;
+}
+
+.watermarkk {
+    position: fixed;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.932);
+    font-size: 18px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Make it responsive for mobile devices */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .video-container,
+    .quiz-container {
+        max-width: 100%;
+    }
 }
