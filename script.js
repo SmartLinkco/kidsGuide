@@ -189,5 +189,34 @@ function playSound(correct) {
     audio.play();
 }
 
+function moveWatermark() {
+    const watermark = document.querySelector('.watermark');
+    const quizContainer = document.querySelector('.quiz-container');
+    const quizRect = quizContainer.getBoundingClientRect();
+    
+    function updatePosition() {
+        const maxX = window.innerWidth - 200;
+        const maxY = window.innerHeight - 50;
+        let newX, newY;
+        
+        do {
+            newX = Math.random() * maxX;
+            newY = Math.random() * maxY;
+        } while (
+            newX < quizRect.right && 
+            newX > quizRect.left - 200 && 
+            newY < quizRect.bottom && 
+            newY > quizRect.top - 50
+        );
+
+        watermark.style.transform = `translate(${newX}px, ${newY}px)`;
+    }
+
+    updatePosition();
+    setInterval(updatePosition, 8000);
+}
+
+window.addEventListener('load', moveWatermark);
+
 // Start the quiz when page loads
 loadQuestion();

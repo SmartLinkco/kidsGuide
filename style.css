@@ -63,3 +63,12 @@ button:hover {
     background-color: #FFCDD2;
     color: #C62828;
 }
+.watermark {
+    position: fixed;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.932);
+    font-size: 24px;
+    pointer-events: none;
+    z-index: -1;
+    transition: all 8s ease-in-out;
+}
